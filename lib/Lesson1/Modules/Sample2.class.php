@@ -32,6 +32,11 @@ class Sample2 extends BaseModule
 		$block = new XmlBlockCollection("Template Block", BlockPosition::Center);
 		$this->defaultXmlnukeDocument->addXmlnukeObject($block);
 
+		if ($this->isPostBack())
+		{
+			$block->addXmlnukeObject('You submit the name "' . $this->_context->get('name') . '"');
+		}
+
 		$form = new XmlFormCollection($this->_context, "module:Lesson1.Sample2", 'Sample Form');
 		$block->addXmlnukeObject($form);
 
