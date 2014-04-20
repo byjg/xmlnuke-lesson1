@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script>
+			function handleList()
+			{
+				var result = $.ajax(
+					{
+						url: "/xmlnuke.php?module=Lesson1.Sample5",
+						data: {},
+						async: false
+					}).responseText;
+
+				if (result == '')
+					return;
+
+				$('#resultList').html('');
+				$('#resultOne').html('');
+				var resultObj = JSON.parse(result);
+
+				var model5 = resultObj.Model5;
+				if (model5 == undefined)
+					return;
+
+				$.each( model5, function( index, value ){
+					$('#resultList').append('<b>' + index + '</b>: ');
+					$('#resultList').append('<a href="javascript:" onclick="handleOne(' + value.id + ')">' + value.name + "</a>");
+					$('#resultList').append('<br/>');
+				});
+			}
+
+			function handleOne(idItem)
+			{
+				var result = $.ajax(
+					{
+						url: "/xmlnuke.php?module=Lesson1.Sample5",
+						data: {action: 'one', id: idItem},
+						async: false
+					}).responseText;
+
+				if (result == '')
+					return;
+
+				var resultObj = JSON.parse(result);
+
+				var model5 = resultObj.Model5;
+				if (model5 == undefined)
+					return;
+
+				$('#resultOne').html(
+					'<ul>' +
+					'<li>Id: ' + model5.id + '</li>' +
+					'<li>Name: ' + model5.name + '</li>' +
+					'<li>Age: ' + model5.age + '</li>' +
+					'<li>Date: ' + model5.date + '</li>' +
+					'</ul>'
+				);
+			}
+		</script>
+	</head>
+	<body>
+		<div>Click in the buttons bellow to process the action</div>
+
+		<input type="button" value="List all data" onclick="handleList()" />
+		<hr/>
+
+		<div id="resultList">
+			
+		</div>
+
+		<hr/>
+
+		<div id="resultOne">
+
+		</div>
+
+
+
+	</body>
+</html>

@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteBase /
+
+# /api/v1/CLASS
+RewriteRule  ^api/v1/([\w\d]+)/?$  /xmlnuke.php?module=Lesson1.$1  [L]
+
+# /api/v1/CLASS/ACTION/ID
+RewriteRule  ^api/v1/([\w\d]+)/([\w\d]+)/([\w\d]*)$  /xmlnuke.php?module=Lesson1.$1&action=$2&id=$3  [L]
