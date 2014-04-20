@@ -32,6 +32,8 @@ class Sample2 extends BaseModule
 		$block = new XmlBlockCollection("Template Block", BlockPosition::Center);
 		$this->defaultXmlnukeDocument->addXmlnukeObject($block);
 
+		$this->processEvent();
+		
 		if ($this->isPostBack())
 		{
 			$block->addXmlnukeObject('You submit the name "' . $this->_context->get('name') . '"');
@@ -68,7 +70,15 @@ class Sample2 extends BaseModule
 
 		$form->addXmlnukeObject(XmlInputButtons::CreateSubmitButton("Send data"));
 
+		$button = new XmlInputButtons();
+		$button->addClickEvent('Button Event', 'Todo');
+		$form->addXmlnukeObject($button);
+
 		return $this->defaultXmlnukeDocument;
 	}
 
+	public function Todo_Event()
+	{
+		\Xmlnuke\Util\Debug::PrintValue('AAA');
+	}
 }
