@@ -1,0 +1,19 @@
+# Xmlnuke Files
+imagevalidate.php
+xmlnuke.inc.php
+xmlnuke.php
+webservice.php
+chart.php
+
+# Machine specific XMLNuke files
+common
+data/cache/*.cache.*
+
+# User specific files. Copy from *-dist.* files instead commit them.
+httpdocs/config.inc.php
+data/anydataset/_db.anydata.xml
+
+# Netbeans Project
+nbproject/private
+
+# User Defined

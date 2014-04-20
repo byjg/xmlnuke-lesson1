@@ -1,0 +1,8 @@
+<codegenx>
+  <torqueXml>Torque.xml</torqueXml>
+  <xsl>
+    <item name="/home/jg/VCS/opensource/xmlnuke/templates/php5/codegenx/xsl/lang.xsl" />
+  </xsl>
+  <extraProperties>Lesson1_Data.xml</extraProperties>
+  <saveTo>..</saveTo>
+</codegenx>

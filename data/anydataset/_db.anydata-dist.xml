@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<anydataset>
+	<row>
+		<field name="dbname">lesson1</field>
+		<field name="dbtype">dsn</field>
+		<field name="dbconnectionstring">mysql://root@localhost/lesson1</field>
+	</row>
+</anydataset>

@@ -1,0 +1,10 @@
+<codegenx>
+  <torqueXml>Torque.xml</torqueXml>
+  <xsl>
+    <item name="/home/jg/VCS/opensource/xmlnuke/templates/php5/codegenx/xsl/Dal.xsl" />
+    <item name="/home/jg/VCS/opensource/xmlnuke/templates/php5/codegenx/xsl/DatabaseModel.xsl" />
+    <item name="/home/jg/VCS/opensource/xmlnuke/templates/php5/codegenx/xsl/UIEdit.xsl" />
+  </xsl>
+  <extraProperties>Lesson1_Lib.xml</extraProperties>
+  <saveTo>../lib/Lesson1</saveTo>
+</codegenx>

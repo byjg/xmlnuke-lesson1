@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<anydataset>
+	<row>
+		<field name="destination_id">DEFAULT</field>
+		<field name="email">youremail@provider.com</field>
+		<field name="name">Your Name</field>
+	</row>
+</anydataset>
