@@ -37,6 +37,12 @@ class Sample2 extends BaseModule
 			$block->addXmlnukeObject('You submit the name "' . $this->_context->get('name') . '"');
 		}
 
+		if ($this->isPostBack())
+		{
+			$model = new \Lesson1\Classes\Model2($this->_context);
+			$block->addXmlnukeObject('You submit the name "' . $model->getName() . '"');
+		}
+
 		$form = new XmlFormCollection($this->_context, "module:Lesson1.Sample2", 'Sample Form');
 		$block->addXmlnukeObject($form);
 
